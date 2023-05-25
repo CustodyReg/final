@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Service Feedback Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css">
+  <style>
+    /* Additional custom styles */
+    .logo {
+      width: 180px;
+      height: 150px;
+      background-image: url('/home/dev/Downloads/download.png');
+      background-size: cover;
+      background-position: center;
+      margin: 0 auto;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #f7f7f7;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .form-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+    .form-label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .form-textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      resize: vertical;
+      min-height: 100px;
+    }
+    .form-submit {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #333;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-submit:hover {
+      background-color: #555;
+    }
+    .social-links {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .social-links a {
+      display: inline-block;
+      margin-right: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 50%;
+      background-color: #555;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    .social-links a:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="logo"></div>
+    <h1 class="form-title">Customer Service Feedback Form</h1>
+    <form id="feedbackForm">
+      <label class="form-label" for="email">Email <span class="text-red-500">*</span></label>
+      <input type="email" id="email" name="email" required class="form-input">
+      
+      <label class="form-label" for="contactType">Select Type of Contact <span class="text-red-500">*</span></label>
+      <select id="contactType" name="contactType" required class="form-input">
+        <option value="">Select...</option>
+        <option value="Enquiry">Enquiry</option>
+        <option value="Complaint">Complaint</option>
+        <option value="Feedback">Feedback</option>
+      </select>
+      
+      <label class="form-label" for="dateOfContact">Date of Contact <span class="text-red-500">*</span></label>
+      <input type="date" id="dateOfContact" name="dateOfContact" required class="form-input">
+      
+      <label class="form-label" for="phoneNumber">Enter Your Phone Number</label>
+      <input type="text" id="phoneNumber" name="phoneNumber" class="form-input">
+      
+      <label class="form-label" for="companyShares">Enter the Company/Companies in Which You Own Shares</label>
+      <input type="text" id="companyShares" name="companyShares" class="form-input">
+      
+      <label class="form-label" for="cdsNumber">Enter Your CDS Number or Share Account Number</label>
+      <input type="text" id="cdsNumber" name="cdsNumber" class="form-input">
+      
+      <label class="form-label" for="serviceHelp">Which Service Did You Need Help With?</label>
+      <select id="serviceHelp" name="serviceHelp" class="form-input">
+        <option value="">Select...</option>
+        <option value="ChangeOfAddress">Change of Address/Bank details/M-Pesa number related services</option>
+        <option value="ChequeReplacement">Cheque Replacement related services</option>
+        <option value="SharesTransfer">Transmission (Shares Transfer) related services</option>
+        <option value="SharesImmobilization">Immobilization (Moving shares from Certificate to CDS account) related services</option>
+        <option value="GeneralEnquiry">General enquiry</option>
+      </select>
+      
+      <label class="form-label" for="contactCount">How Many Times Have You Contacted Us So Far for Your Current Query?</label>
+      <input type="number" id="contactCount" name="contactCount" class="form-input">
+      
+      <label class="form-label">Please rate the following accordingly:</label>
+      
+      <div class="flex items-center mb-4">
+        <label class="mr-4">Staff greeted you and offered to help you:</label>
+        <label class="mr-2">
+          <input type="radio" name="greetingRating" value="Excellent" class="mr-1">
+          Excellent
+        </label>
+        <label class="mr-2">
+          <input type="radio" name="greetingRating" value="Good" class="mr-1">
+          Good
+        </label>
+        <label class="mr-2">
+          <input type="radio" name="greetingRating" value="Neutral" class="mr-1">
+          Neutral
+        </label>
+        <label>
+          <input type="radio" name="greetingRating" value="Poor" class="mr-1">
+          Poor
+        </label>
+      </div>
+      
+      <div class="flex items-center mb-4">
+        <label class="mr-4">Staff were courteous and cheerful throughout:</label>
+        <label class="mr-2">
+          <input type="radio" name="courtesyRating" value="Excellent" class="mr-1">
+          Excellent
+        </label>
+        <label class="mr-2">
+          <input type="radio" name="courtesyRating" value="Good" class="mr-1">
+          Good
+        </label>
+        <label class="mr-2">
+          <input type="radio" name="courtesyRating" value="Neutral" class="mr-1">
+          Neutral
+        </label>
+        <label>
+          <input type="radio" name="courtesyRating" value="Poor" class="mr-1">
+          Poor
+        </label>
+      </div>
+      
+      <div class="flex items-center mb-4">
+        <label class="mr-4">Staff answered your questions:</label>
+        <label class="mr-2">
+          <input type="radio" name="answerRating" value="Excellent" class="mr-1">
+          Excellent
+        </label>
+        <label class="mr-2">
+          <input type="radio" name="answerRating" value="Good" class="mr-1">
+          Good
+        </label>
+        <label class="mr-2">
+          <input type="radio" name="answerRating" value="Neutral" class="mr-1">
+          Neutral
+        </label>
+        <label>
+          <input type="radio" name="answerRating" value="Poor" class="mr-1">
+          Poor
+        </label>
+      </div>
+      
+      <div class="flex items-center mb-4">
+        <label class="mr-4">Staff offered relevant advice:</label>
+        <label class="mr-2">
+          <input type="radio" name="adviceRating" value="Excellent" class="mr-1">
+          Excellent
+        </label>
+        <label class="mr-2">
+          <input type="radio" name="adviceRating" value="Good" class="mr-1">
+          Good
+        </label>
+        <label class="mr-2">
+          <input type="radio" name="adviceRating" value="Neutral" class="mr-1">
+          Neutral
+        </label>
+        <label>
+          <input type="radio" name="adviceRating" value="Poor" class="mr-1">
+          Poor
+        </label>
+      </div>
+      
+      <label class="form-label" for="efficiencyRating">How would you rate the efficiency and effectiveness of our services?</label>
+      <input type="text" id="efficiencyRating" name="efficiencyRating" class="form-input">
+      
+      <label class="form-label">We are always looking to improve our services to enable us to serve you better. What do you recommend that we do to make your future experience better?</label>
+      <textarea id="recommendation" name="recommendation" class="form-textarea"></textarea>
+      
+      <div class="social-links">
+        <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+      </div>
+      
+      <br><br>
+      
+      <input type="submit" value="Submit" class="form-submit">
+    </form>
+  </div>
+
+  <script src="https://kit.fontawesome.com/your_fontawesome_kit.js" crossorigin="anonymous"></script>
+  <script>
+    const feedbackForm = document.getElementById('feedbackForm');
+    feedbackForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      // You can add code here to handle the form submission, such as sending the data to a server or displaying a success message
+      console.log('Form submitted!');
+    });
+  </script>
+</body>
+</html>
